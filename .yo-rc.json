@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.tornabene.covid19app",
+      "nativeLanguage": "it"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "covid19app",
+    "packageName": "com.tornabene.covid19app",
+    "packageFolder": "com/tornabene/covid19app",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZmY3NzM5OWUwMWY5Y2Y3MDQzZTcxODQyNjVlMjVkYmFiZDdhOTQ0NTMwMzdmNGMxNjU5M2UwZDIxMWY2MDhlNjgyYjlkNGE2YWYzYTk3YjUwNmNiYTA5NGI1ZjA5MjY0NzY3NGRkMWNkMTg2ZTMxZDliYzIxZDA3YjhhOTA4YWE=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1584298216458,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "it",
+    "languages": ["it", "en"],
+    "blueprints": []
+  }
+}
