@@ -1,0 +1,223 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-paziente-heading" jhiTranslate="covid19AppApp.paziente.home.createOrEditLabel">Create or edit a Paziente</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.cf" for="field_cf">Cf</label>
+                    <input type="text" class="form-control" name="cf" id="field_cf"
+                           formControlName="cf"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.age" for="field_age">Age</label>
+                    <input type="number" class="form-control" name="age" id="field_age"
+                           formControlName="age"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.sex" for="field_sex">Sex</label>
+                    <select class="form-control" name="sex" formControlName="sex" id="field_sex">
+                        <option value="M">{{ 'covid19AppApp.Sex.M' | translate }}</option>
+                        <option value="F">{{ 'covid19AppApp.Sex.F' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.comune" for="field_comune">Comune</label>
+                    <input type="text" class="form-control" name="comune" id="field_comune"
+                           formControlName="comune"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.provincia" for="field_provincia">Provincia</label>
+                    <input type="text" class="form-control" name="provincia" id="field_provincia"
+                           formControlName="provincia"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.regione" for="field_regione">Regione</label>
+                    <input type="text" class="form-control" name="regione" id="field_regione"
+                           formControlName="regione"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.latitudine" for="field_latitudine">Latitudine</label>
+                    <input type="text" class="form-control" name="latitudine" id="field_latitudine"
+                           formControlName="latitudine"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.longitudine" for="field_longitudine">Longitudine</label>
+                    <input type="text" class="form-control" name="longitudine" id="field_longitudine"
+                           formControlName="longitudine"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.numeroFamigliari" for="field_numeroFamigliari">Numero Famigliari</label>
+                    <input type="number" class="form-control" name="numeroFamigliari" id="field_numeroFamigliari"
+                           formControlName="numeroFamigliari"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.professione" for="field_professione">Professione</label>
+                    <input type="text" class="form-control" name="professione" id="field_professione"
+                           formControlName="professione"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.fumatore" for="field_fumatore">Fumatore</label>
+                    <input type="checkbox" class="form-control" name="fumatore" id="field_fumatore"
+                           formControlName="fumatore"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.posivito" for="field_posivito">Posivito</label>
+                    <input type="checkbox" class="form-control" name="posivito" id="field_posivito"
+                           formControlName="posivito"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.isolamentoDomiciliare" for="field_isolamentoDomiciliare">Isolamento Domiciliare</label>
+                    <input type="checkbox" class="form-control" name="isolamentoDomiciliare" id="field_isolamentoDomiciliare"
+                           formControlName="isolamentoDomiciliare"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.terapiaIntensiva" for="field_terapiaIntensiva">Terapia Intensiva</label>
+                    <input type="checkbox" class="form-control" name="terapiaIntensiva" id="field_terapiaIntensiva"
+                           formControlName="terapiaIntensiva"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.guarito" for="field_guarito">Guarito</label>
+                    <input type="checkbox" class="form-control" name="guarito" id="field_guarito"
+                           formControlName="guarito"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.deceduto" for="field_deceduto">Deceduto</label>
+                    <input type="checkbox" class="form-control" name="deceduto" id="field_deceduto"
+                           formControlName="deceduto"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.dataTampone" for="field_dataTampone">Data Tampone</label>
+                    <div class="d-flex">
+                        <input id="field_dataTampone" type="datetime-local" class="form-control" name="dataTampone" formControlName="dataTampone" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.dataGuarito" for="field_dataGuarito">Data Guarito</label>
+                    <div class="d-flex">
+                        <input id="field_dataGuarito" type="datetime-local" class="form-control" name="dataGuarito" formControlName="dataGuarito" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.dataIsolamentoDomiciliare" for="field_dataIsolamentoDomiciliare">Data Isolamento Domiciliare</label>
+                    <div class="d-flex">
+                        <input id="field_dataIsolamentoDomiciliare" type="datetime-local" class="form-control" name="dataIsolamentoDomiciliare" formControlName="dataIsolamentoDomiciliare" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.dataDeceduto" for="field_dataDeceduto">Data Deceduto</label>
+                    <div class="d-flex">
+                        <input id="field_dataDeceduto" type="datetime-local" class="form-control" name="dataDeceduto" formControlName="dataDeceduto" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.dataTerapiaIntensiva" for="field_dataTerapiaIntensiva">Data Terapia Intensiva</label>
+                    <div class="d-flex">
+                        <input id="field_dataTerapiaIntensiva" type="datetime-local" class="form-control" name="dataTerapiaIntensiva" formControlName="dataTerapiaIntensiva" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.dataDimissione" for="field_dataDimissione">Data Dimissione</label>
+                    <div class="d-flex">
+                        <input id="field_dataDimissione" type="datetime-local" class="form-control" name="dataDimissione" formControlName="dataDimissione" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.giorniIsolamentoDomiciliare" for="field_giorniIsolamentoDomiciliare">Giorni Isolamento Domiciliare</label>
+                    <input type="number" class="form-control" name="giorniIsolamentoDomiciliare" id="field_giorniIsolamentoDomiciliare"
+                           formControlName="giorniIsolamentoDomiciliare"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.giorniTerapiaIntensiva" for="field_giorniTerapiaIntensiva">Giorni Terapia Intensiva</label>
+                    <input type="number" class="form-control" name="giorniTerapiaIntensiva" id="field_giorniTerapiaIntensiva"
+                           formControlName="giorniTerapiaIntensiva"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.giorniGuarito" for="field_giorniGuarito">Giorni Guarito</label>
+                    <input type="number" class="form-control" name="giorniGuarito" id="field_giorniGuarito"
+                           formControlName="giorniGuarito"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.giorniDeceduto" for="field_giorniDeceduto">Giorni Deceduto</label>
+                    <input type="number" class="form-control" name="giorniDeceduto" id="field_giorniDeceduto"
+                           formControlName="giorniDeceduto"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="covid19AppApp.paziente.nota" for="field_nota">Nota</label>
+                    <input type="text" class="form-control" name="nota" id="field_nota"
+                           formControlName="nota"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="covid19AppApp.paziente.sintomi" for="field_sintomis">Sintomi</label>
+                    <select class="form-control" id="field_sintomis" multiple name="sintomis" formControlName="sintomis">
+                        <option [ngValue]="getSelected(editForm.get('sintomis')!.value, sintomoOption)" *ngFor="let sintomoOption of sintomos; trackBy: trackById">{{ sintomoOption.nome }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="covid19AppApp.paziente.farmaciUsati" for="field_farmaciUsatis">Farmaci Usati</label>
+                    <select class="form-control" id="field_farmaciUsatis" multiple name="farmaciUsatis" formControlName="farmaciUsatis">
+                        <option [ngValue]="getSelected(editForm.get('farmaciUsatis')!.value, farmacoOption)" *ngFor="let farmacoOption of farmacos; trackBy: trackById">{{ farmacoOption.nome }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="covid19AppApp.paziente.altrePatologie" for="field_altrePatologies">Altre Patologie</label>
+                    <select class="form-control" id="field_altrePatologies" multiple name="altrePatologies" formControlName="altrePatologies">
+                        <option [ngValue]="getSelected(editForm.get('altrePatologies')!.value, patologiaOption)" *ngFor="let patologiaOption of patologias; trackBy: trackById">{{ patologiaOption.nome }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

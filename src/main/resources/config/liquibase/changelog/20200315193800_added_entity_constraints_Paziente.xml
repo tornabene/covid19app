@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity Paziente.
+    -->
+    <changeSet id="20200315193800-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="paziente_id"
+                                 baseTableName="paziente_sintomi"
+                                 constraintName="fk_paziente_sintomi_paziente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="paziente"/>
+
+        <addForeignKeyConstraint baseColumnNames="sintomi_id"
+                                 baseTableName="paziente_sintomi"
+                                 constraintName="fk_paziente_sintomi_sintomi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sintomo"/>
+        
+        <addForeignKeyConstraint baseColumnNames="paziente_id"
+                                 baseTableName="paziente_farmaci_usati"
+                                 constraintName="fk_paziente_farmaci_usati_paziente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="paziente"/>
+
+        <addForeignKeyConstraint baseColumnNames="farmaci_usati_id"
+                                 baseTableName="paziente_farmaci_usati"
+                                 constraintName="fk_paziente_farmaci_usati_farmaci_usati_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="farmaco"/>
+        
+        <addForeignKeyConstraint baseColumnNames="paziente_id"
+                                 baseTableName="paziente_altre_patologie"
+                                 constraintName="fk_paziente_altre_patologie_paziente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="paziente"/>
+
+        <addForeignKeyConstraint baseColumnNames="altre_patologie_id"
+                                 baseTableName="paziente_altre_patologie"
+                                 constraintName="fk_paziente_altre_patologie_altre_patologie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="patologia"/>
+        
+    </changeSet>
+</databaseChangeLog>

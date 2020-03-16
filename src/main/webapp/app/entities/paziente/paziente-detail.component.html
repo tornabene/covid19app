@@ -1,0 +1,156 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="paziente">
+            <h2><span jhiTranslate="covid19AppApp.paziente.detail.title">Paziente</span> {{ paziente.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="covid19AppApp.paziente.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ paziente.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.cf">Cf</span></dt>
+                <dd>
+                    <span>{{ paziente.cf }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.age">Age</span></dt>
+                <dd>
+                    <span>{{ paziente.age }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.sex">Sex</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'covid19AppApp.Sex.' + paziente.sex }}">{{ paziente.sex }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.comune">Comune</span></dt>
+                <dd>
+                    <span>{{ paziente.comune }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.provincia">Provincia</span></dt>
+                <dd>
+                    <span>{{ paziente.provincia }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.regione">Regione</span></dt>
+                <dd>
+                    <span>{{ paziente.regione }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.latitudine">Latitudine</span></dt>
+                <dd>
+                    <span>{{ paziente.latitudine }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.longitudine">Longitudine</span></dt>
+                <dd>
+                    <span>{{ paziente.longitudine }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.numeroFamigliari">Numero Famigliari</span></dt>
+                <dd>
+                    <span>{{ paziente.numeroFamigliari }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.professione">Professione</span></dt>
+                <dd>
+                    <span>{{ paziente.professione }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.fumatore">Fumatore</span></dt>
+                <dd>
+                    <span>{{ paziente.fumatore }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.posivito">Posivito</span></dt>
+                <dd>
+                    <span>{{ paziente.posivito }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.isolamentoDomiciliare">Isolamento Domiciliare</span></dt>
+                <dd>
+                    <span>{{ paziente.isolamentoDomiciliare }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.terapiaIntensiva">Terapia Intensiva</span></dt>
+                <dd>
+                    <span>{{ paziente.terapiaIntensiva }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.guarito">Guarito</span></dt>
+                <dd>
+                    <span>{{ paziente.guarito }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.deceduto">Deceduto</span></dt>
+                <dd>
+                    <span>{{ paziente.deceduto }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.dataTampone">Data Tampone</span></dt>
+                <dd>
+                    <span>{{ paziente.dataTampone }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.dataGuarito">Data Guarito</span></dt>
+                <dd>
+                    <span>{{ paziente.dataGuarito }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.dataIsolamentoDomiciliare">Data Isolamento Domiciliare</span></dt>
+                <dd>
+                    <span>{{ paziente.dataIsolamentoDomiciliare }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.dataDeceduto">Data Deceduto</span></dt>
+                <dd>
+                    <span>{{ paziente.dataDeceduto }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.dataTerapiaIntensiva">Data Terapia Intensiva</span></dt>
+                <dd>
+                    <span>{{ paziente.dataTerapiaIntensiva }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.dataDimissione">Data Dimissione</span></dt>
+                <dd>
+                    <span>{{ paziente.dataDimissione }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.giorniIsolamentoDomiciliare">Giorni Isolamento Domiciliare</span></dt>
+                <dd>
+                    <span>{{ paziente.giorniIsolamentoDomiciliare }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.giorniTerapiaIntensiva">Giorni Terapia Intensiva</span></dt>
+                <dd>
+                    <span>{{ paziente.giorniTerapiaIntensiva }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.giorniGuarito">Giorni Guarito</span></dt>
+                <dd>
+                    <span>{{ paziente.giorniGuarito }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.giorniDeceduto">Giorni Deceduto</span></dt>
+                <dd>
+                    <span>{{ paziente.giorniDeceduto }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.nota">Nota</span></dt>
+                <dd>
+                    <span>{{ paziente.nota }}</span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.sintomi">Sintomi</span></dt>
+                <dd>
+                    <span *ngFor="let sintomi of paziente.sintomis; let last = last">
+                        <a [routerLink]="['/sintomo', sintomi?.id, 'view']">{{ sintomi.nome }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.farmaciUsati">Farmaci Usati</span></dt>
+                <dd>
+                    <span *ngFor="let farmaciUsati of paziente.farmaciUsatis; let last = last">
+                        <a [routerLink]="['/farmaco', farmaciUsati?.id, 'view']">{{ farmaciUsati.nome }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="covid19AppApp.paziente.altrePatologie">Altre Patologie</span></dt>
+                <dd>
+                    <span *ngFor="let altrePatologie of paziente.altrePatologies; let last = last">
+                        <a [routerLink]="['/patologia', altrePatologie?.id, 'view']">{{ altrePatologie.nome }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/paziente', paziente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

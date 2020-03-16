@@ -1,0 +1,23 @@
+{
+  "covid19AppApp": {
+    "patologia": {
+      "home": {
+        "title": "Patologias",
+        "createLabel": "Create a new Patologia",
+        "createOrEditLabel": "Create or edit a Patologia",
+        "notFound": "No Patologias found"
+      },
+      "created": "A new Patologia is created with identifier {{ param }}",
+      "updated": "A Patologia is updated with identifier {{ param }}",
+      "deleted": "A Patologia is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Patologia {{ id }}?"
+      },
+      "detail": {
+        "title": "Patologia"
+      },
+      "nome": "Nome",
+      "pazienti": "Pazienti"
+    }
+  }
+}

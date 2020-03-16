@@ -1,0 +1,23 @@
+{
+  "covid19AppApp": {
+    "farmaco": {
+      "home": {
+        "title": "Farmacos",
+        "createLabel": "Create a new Farmaco",
+        "createOrEditLabel": "Create or edit a Farmaco",
+        "notFound": "No Farmacos found"
+      },
+      "created": "A new Farmaco is created with identifier {{ param }}",
+      "updated": "A Farmaco is updated with identifier {{ param }}",
+      "deleted": "A Farmaco is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Farmaco {{ id }}?"
+      },
+      "detail": {
+        "title": "Farmaco"
+      },
+      "nome": "Nome",
+      "pazienti": "Pazienti"
+    }
+  }
+}

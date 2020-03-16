@@ -1,0 +1,23 @@
+{
+  "covid19AppApp": {
+    "sintomo": {
+      "home": {
+        "title": "Sintomos",
+        "createLabel": "Create a new Sintomo",
+        "createOrEditLabel": "Create or edit a Sintomo",
+        "notFound": "No Sintomos found"
+      },
+      "created": "A new Sintomo is created with identifier {{ param }}",
+      "updated": "A Sintomo is updated with identifier {{ param }}",
+      "deleted": "A Sintomo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sintomo {{ id }}?"
+      },
+      "detail": {
+        "title": "Sintomo"
+      },
+      "nome": "Nome",
+      "pazienti": "Pazienti"
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+    "name": "Paziente",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sex",
+            "fieldType": "Sex",
+            "fieldValues": "M,F"
+        },
+        {
+            "fieldName": "comune",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "provincia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "regione",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latitudine",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitudine",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroFamigliari",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "professione",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fumatore",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "posivito",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isolamentoDomiciliare",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "terapiaIntensiva",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "guarito",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "deceduto",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "dataTampone",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataGuarito",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataIsolamentoDomiciliare",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataDeceduto",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataTerapiaIntensiva",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataDimissione",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "giorniIsolamentoDomiciliare",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "giorniTerapiaIntensiva",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "giorniGuarito",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "giorniDeceduto",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nota",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "sintomo",
+            "otherEntityRelationshipName": "pazienti",
+            "relationshipName": "sintomi",
+            "otherEntityField": "nome",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "farmaco",
+            "otherEntityRelationshipName": "pazienti",
+            "relationshipName": "farmaciUsati",
+            "otherEntityField": "nome",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "patologia",
+            "otherEntityRelationshipName": "pazienti",
+            "relationshipName": "altrePatologie",
+            "otherEntityField": "nome",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200315193800",
+    "entityTableName": "paziente",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,125 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="covid19AppApp.paziente.home.title">Pazientes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-paziente" [routerLink]="['/paziente/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="covid19AppApp.paziente.home.createLabel">
+            Create a new Paziente
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="pazientes?.length === 0">
+        <span jhiTranslate="covid19AppApp.paziente.home.notFound">No pazientes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="pazientes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nome"><span jhiTranslate="covid19AppApp.paziente.nome">Nome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="cf"><span jhiTranslate="covid19AppApp.paziente.cf">Cf</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="age"><span jhiTranslate="covid19AppApp.paziente.age">Age</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sex"><span jhiTranslate="covid19AppApp.paziente.sex">Sex</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="comune"><span jhiTranslate="covid19AppApp.paziente.comune">Comune</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="provincia"><span jhiTranslate="covid19AppApp.paziente.provincia">Provincia</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="regione"><span jhiTranslate="covid19AppApp.paziente.regione">Regione</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="latitudine"><span jhiTranslate="covid19AppApp.paziente.latitudine">Latitudine</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="longitudine"><span jhiTranslate="covid19AppApp.paziente.longitudine">Longitudine</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numeroFamigliari"><span jhiTranslate="covid19AppApp.paziente.numeroFamigliari">Numero Famigliari</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="professione"><span jhiTranslate="covid19AppApp.paziente.professione">Professione</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fumatore"><span jhiTranslate="covid19AppApp.paziente.fumatore">Fumatore</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="posivito"><span jhiTranslate="covid19AppApp.paziente.posivito">Posivito</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="isolamentoDomiciliare"><span jhiTranslate="covid19AppApp.paziente.isolamentoDomiciliare">Isolamento Domiciliare</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="terapiaIntensiva"><span jhiTranslate="covid19AppApp.paziente.terapiaIntensiva">Terapia Intensiva</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="guarito"><span jhiTranslate="covid19AppApp.paziente.guarito">Guarito</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="deceduto"><span jhiTranslate="covid19AppApp.paziente.deceduto">Deceduto</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dataTampone"><span jhiTranslate="covid19AppApp.paziente.dataTampone">Data Tampone</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dataGuarito"><span jhiTranslate="covid19AppApp.paziente.dataGuarito">Data Guarito</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dataIsolamentoDomiciliare"><span jhiTranslate="covid19AppApp.paziente.dataIsolamentoDomiciliare">Data Isolamento Domiciliare</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dataDeceduto"><span jhiTranslate="covid19AppApp.paziente.dataDeceduto">Data Deceduto</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dataTerapiaIntensiva"><span jhiTranslate="covid19AppApp.paziente.dataTerapiaIntensiva">Data Terapia Intensiva</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dataDimissione"><span jhiTranslate="covid19AppApp.paziente.dataDimissione">Data Dimissione</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="giorniIsolamentoDomiciliare"><span jhiTranslate="covid19AppApp.paziente.giorniIsolamentoDomiciliare">Giorni Isolamento Domiciliare</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="giorniTerapiaIntensiva"><span jhiTranslate="covid19AppApp.paziente.giorniTerapiaIntensiva">Giorni Terapia Intensiva</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="giorniGuarito"><span jhiTranslate="covid19AppApp.paziente.giorniGuarito">Giorni Guarito</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="giorniDeceduto"><span jhiTranslate="covid19AppApp.paziente.giorniDeceduto">Giorni Deceduto</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nota"><span jhiTranslate="covid19AppApp.paziente.nota">Nota</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let paziente of pazientes ;trackBy: trackId">
+                    <td><a [routerLink]="['/paziente', paziente.id, 'view']">{{ paziente.id }}</a></td>
+                    <td>{{ paziente.nome }}</td>
+                    <td>{{ paziente.cf }}</td>
+                    <td>{{ paziente.age }}</td>
+                    <td jhiTranslate="{{ 'covid19AppApp.Sex.' + paziente.sex }}">{{ paziente.sex }}</td>
+                    <td>{{ paziente.comune }}</td>
+                    <td>{{ paziente.provincia }}</td>
+                    <td>{{ paziente.regione }}</td>
+                    <td>{{ paziente.latitudine }}</td>
+                    <td>{{ paziente.longitudine }}</td>
+                    <td>{{ paziente.numeroFamigliari }}</td>
+                    <td>{{ paziente.professione }}</td>
+                    <td>{{ paziente.fumatore }}</td>
+                    <td>{{ paziente.posivito }}</td>
+                    <td>{{ paziente.isolamentoDomiciliare }}</td>
+                    <td>{{ paziente.terapiaIntensiva }}</td>
+                    <td>{{ paziente.guarito }}</td>
+                    <td>{{ paziente.deceduto }}</td>
+                    <td>{{ paziente.dataTampone | date:'medium' }}</td>
+                    <td>{{ paziente.dataGuarito | date:'medium' }}</td>
+                    <td>{{ paziente.dataIsolamentoDomiciliare | date:'medium' }}</td>
+                    <td>{{ paziente.dataDeceduto | date:'medium' }}</td>
+                    <td>{{ paziente.dataTerapiaIntensiva | date:'medium' }}</td>
+                    <td>{{ paziente.dataDimissione | date:'medium' }}</td>
+                    <td>{{ paziente.giorniIsolamentoDomiciliare }}</td>
+                    <td>{{ paziente.giorniTerapiaIntensiva }}</td>
+                    <td>{{ paziente.giorniGuarito }}</td>
+                    <td>{{ paziente.giorniDeceduto }}</td>
+                    <td>{{ paziente.nota }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/paziente', paziente.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/paziente', paziente.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(paziente)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="pazientes?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

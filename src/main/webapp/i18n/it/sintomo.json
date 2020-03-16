@@ -1,0 +1,23 @@
+{
+  "covid19AppApp": {
+    "sintomo": {
+      "home": {
+        "title": "Sintomos",
+        "createLabel": "Genera un nuovo Sintomo",
+        "createOrEditLabel": "Genera o modifica un Sintomo",
+        "notFound": "No Sintomos found"
+      },
+      "created": "&Egrave; stato generato un nuovo Sintomo con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Sintomo identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Sintomo con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Sintomo {{ id }}?"
+      },
+      "detail": {
+        "title": "Sintomo"
+      },
+      "nome": "Nome",
+      "pazienti": "Pazienti"
+    }
+  }
+}
